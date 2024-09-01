@@ -2,9 +2,10 @@
 {
     public class NumbersService
     {
+        private readonly int _number = new Random().Next(0, 100);
         public int GetNumber()
         {
-            return 5;
+            return _number;
         }
     }
 }
