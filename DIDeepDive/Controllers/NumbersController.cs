@@ -1,15 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DIDeepDive.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DIDeepDive.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class NumbersController : ControllerBase
+    public class NumbersController(NumbersService _numbersService) : ControllerBase
     {
         [HttpGet]
         public IActionResult GetNumber()
         {
-            return Ok(5);
+            return Ok(_numbersService.GetNumber());
         }
     }
 }
