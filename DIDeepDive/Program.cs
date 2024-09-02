@@ -5,8 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 {
     //builder.Services.AddTransient<NumbersService>();
-    builder.Services.AddSingleton<NumbersService>();
-    builder.Services.AddTransient<NumbersClient>();
+    builder.Services.AddTransient<NumbersService>();
+    builder.Services.AddScoped<NumbersClient>();
     builder.Services.AddControllers();
 }
 
