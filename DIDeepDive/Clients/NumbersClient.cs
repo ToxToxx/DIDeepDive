@@ -2,7 +2,11 @@
 {
     public class NumbersClient
     {
-        private readonly int _number = new Random().Next(0, 100);
+        private int _number = 0;
+        public void Increment()
+        {
+            _number++;
+        }
     
         public int GetNumber()
         {
