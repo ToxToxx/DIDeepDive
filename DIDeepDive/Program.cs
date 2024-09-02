@@ -3,7 +3,8 @@ using DIDeepDive.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 {
-    builder.Services.AddTransient<NumbersService>();
+    //builder.Services.AddTransient<NumbersService>();
+    builder.Services.AddSingleton<NumbersService>();
     builder.Services.AddControllers();
 }
 
