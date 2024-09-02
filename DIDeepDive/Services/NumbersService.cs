@@ -2,7 +2,7 @@
 
 namespace DIDeepDive.Services
 {
-    public class NumbersService(NumbersClient _numbersClient)
+    public class NumbersService(INumbersClient _numbersClient)
     {
         public int GetNumber()
         {

@@ -1,13 +1,13 @@
 ﻿namespace DIDeepDive.Clients
 {
-    public class NumbersClient : INumbersClient
+    public class NumberThreeClient : INumbersClient
     {
-        private int _number = 0;
+        private int _number = 2;
         public void Increment()
         {
             _number++;
         }
-    
+
         public int GetNumber()
         {
             return _number;

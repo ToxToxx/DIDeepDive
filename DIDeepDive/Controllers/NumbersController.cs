@@ -6,7 +6,9 @@ namespace DIDeepDive.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class NumbersController(NumbersService _numbersService, NumbersClient _numbersClient) : ControllerBase
+    public class NumbersController(
+        NumbersService _numbersService, 
+        INumbersClient _numbersClient) : ControllerBase
     {
         [HttpGet]
         public IActionResult GetNumber()

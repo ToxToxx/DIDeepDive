@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 {
     //builder.Services.AddTransient<NumbersService>();
     builder.Services.AddScoped<NumbersService>();
-    builder.Services.AddScoped<NumbersClient>();
+    builder.Services.AddScoped<INumbersClient, NumbersClient>();
+    builder.Services.AddScoped<INumbersClient, NumberThreeClient>();
     builder.Services.AddControllers();
 }
 
@@ -15,7 +16,7 @@ var app = builder.Build();
 {
     app.MapControllers();
 
-    app.Use(async (httpContext, next) =>
+   app.Use(async (httpContext, next) =>
     {
         var client 
         = httpContext.RequestServices
