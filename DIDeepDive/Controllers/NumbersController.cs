@@ -7,13 +7,11 @@ namespace DIDeepDive.Controllers
     [ApiController]
     [Route("[controller]")]
     public class NumbersController(
-        NumbersService _numbersService, 
-        INumbersClient _numbersClient) : ControllerBase
+        NumbersService _numbersService) : ControllerBase
     {
         [HttpGet]
         public IActionResult GetNumber()
-        {
-            _numbersClient.Increment();
+        {;
             return Ok(_numbersService.GetNumber());
         }
     }

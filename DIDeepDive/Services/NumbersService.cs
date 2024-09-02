@@ -2,11 +2,11 @@
 
 namespace DIDeepDive.Services
 {
-    public class NumbersService(INumbersClient _numbersClient)
+    public class NumbersService(IEnumerable<INumbersClient> _numbersClient)
     {
         public int GetNumber()
         {
-            return _numbersClient.GetNumber();
+            return _numbersClient.Sum(client => client.GetNumber());
         }
     }
 }

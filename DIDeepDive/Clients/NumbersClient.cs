@@ -2,7 +2,7 @@
 {
     public class NumbersClient : INumbersClient
     {
-        private int _number = 0;
+        private int _number = 1;
         public void Increment()
         {
             _number++;

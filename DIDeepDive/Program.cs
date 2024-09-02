@@ -6,8 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 {
     //builder.Services.AddTransient<NumbersService>();
     builder.Services.AddScoped<NumbersService>();
-    builder.Services.AddScoped<INumbersClient, NumbersClient>();
-    builder.Services.AddScoped<INumbersClient, NumberThreeClient>();
+    builder.Services.AddKeyedScoped<INumbersClient, NumbersClient>("one");
+    builder.Services.AddKeyedScoped<INumbersClient, NumberThreeClient>("three");
     builder.Services.AddControllers();
 }
 
@@ -16,6 +16,7 @@ var app = builder.Build();
 {
     app.MapControllers();
 
+    /*
    app.Use(async (httpContext, next) =>
     {
         var client 
@@ -25,7 +26,7 @@ var app = builder.Build();
         client.Increment();
 
         await next();
-    });
+    });*/
 
     app.Run();
 }
