@@ -1,6 +1,6 @@
 @DIDeepDive_HostAddress = http://localhost:5036
 
-GET {{DIDeepDive_HostAddress}}/numbers/
+GET {{DIDeepDive_HostAddress}}/numbers/all
 Accept: application/json
 
 ###
